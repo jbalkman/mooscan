@@ -46,7 +46,7 @@
 		$(this).data('timeout', window.setTimeout(function() { $(self).data('flag', false); }, 25));
 		
 		var $this = $(this), data = $this.data("globals");
-		var delta = Math.max(-1, Math.min(1, (e.originalEvent.wheelDelta || -e.originalEvent.detail)));
+		var delta = Math.max(-1, Math.min(1, (e.originalEvent.wheelDelta || -e.originalEvent.detail || -e.originalEvent.deltaY)));
 		
 		if (delta > 0) {
 		    data.nextIndex = data.nextIndex - 1;
