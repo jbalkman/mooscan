@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<body>
+<canvas id="myCanvasLower" width="630" height="630"></canvas>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- enter path were mooscan is hosted -->
+<script src=".../jquery.mooscan.js"></script>
+<script>
+//array with image data
+var images = [
+  "https://images.radiopaedia.org/images/6091552/38c51920dfab2057b870c5ee2689c9_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091553/91c716c0c38dee3f2c1299648e17ff_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091554/fdd2e6bd22926135edbae1f47ee62d_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091555/40a6630c52e542d378b7d6621791ef_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091556/963708f468367cd32905a3ef289263_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091557/72292049d3b51ba15af25962879c99_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091558/ef94fefacc815edbb5c086fc3691d1_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091559/e568409a22741b3d3983e625d95a10_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091561/ee73f0cefdd736d2b4940f5a389ff9_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091565/c02ccd57fd02831bfa3472aeef4e0c_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091568/cae7092adaa917139063f0291fcaad_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091572/ccb6978aa0baa899526495f07f150f_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091576/ee787458bcfb114437d68ad6ba2ae3_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091580/ff03eba1c144526874ae896251416e_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091583/b18ef9bf5879611361a6a8cf29489b_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091588/b94502ffb3955747c0f2b9babaf23e_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091592/c15f92466c23383ee3f7cc03076935_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091597/d56754396cd97889fd80a1136b1ad0_big_gallery.jpg",
+  "https://images.radiopaedia.org/images/6091598/f5e11de5c85fcb3ccb0f01e2aa2c47_big_gallery.jpg"
+];
+
+//load first image
+myimg = document.createElement('img');
+myimg.src = images[0];
+var contextLower = document.getElementById("myCanvasLower").getContext("2d");
+myimg.onload = function (){
+  contextLower.drawImage(myimg,0,0,630,630);
+}
+
+//load mooscan
+$("#myCanvasLower").mooscan({images:images,imgx:0,imgy:0,niw:630,nih:630});
+</script>
+
+</html>
